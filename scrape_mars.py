@@ -52,14 +52,14 @@ def scrape():
     'Valles Marineris Hemisphere Enhanced']
     hemisphere = []
     for i in hemisphere_titles:
-    browser.visit(url_hemisphere_img)
-    browser.click_link_by_partial_text(i)
-    html_hemisphere_img = browser.html
-    soup_hemisphere_img = bs(html_hemisphere_img, 'html.parser')
-    hemisphere_img = soup_hemisphere_img.select_one("img.wide-image").get("src")
-    hemisphere_img_url = 'https://astrogeology.usgs.gov' + hemisphere_img
-    hemisphere.append({"title": i,"img-url": hemisphere_img_url}) 
-    mars_data["hemisphere"] = hemisphere
+        browser.visit(url_hemisphere_img)
+        browser.click_link_by_partial_text(i)
+        html_hemisphere_img = browser.html
+        soup_hemisphere_img = bs(html_hemisphere_img, 'html.parser')
+        hemisphere_img = soup_hemisphere_img.select_one("img.wide-image").get("src")
+        hemisphere_img_url = 'https://astrogeology.usgs.gov' + hemisphere_img
+        hemisphere.append({"title": i,"img-url": hemisphere_img_url}) 
+        mars_data["hemisphere"] = hemisphere
    
 
     return mars_data

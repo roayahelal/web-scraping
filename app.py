@@ -11,11 +11,10 @@ mongo = PyMongo(app)
 # Or set inline
 # mongo = PyMongo(app, uri="mongodb://localhost:27017/craigslist_app")
 
-
 @app.route("/")
 def index():
-    mars_Data = mongo.db.mars_data.find_one()
-    return render_template("index.html", listings=listings)
+    mars_data = mongo.db.mars_data.find_one()
+    return render_template("index.html", listings=mars_data)
 
 
 @app.route("/scrape")
@@ -25,6 +24,7 @@ def scraper():
     mars_data.update({}, mars_data, upsert=True)
     return redirect("/", code=302)
 
-
+# below runs the code if this is the file that was run rather than it was imported
 if __name__ == "__main__":
     app.run(debug=True)
+
