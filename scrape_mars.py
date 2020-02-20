@@ -28,6 +28,7 @@ def scrape():
     browser.visit(url_feature_img)
     browser.click_link_by_partial_text("FULL IMAGE")
     browser.click_link_by_partial_text("more info")
+    html_feature_img = browser.html
     soup_feature_img = bs(html_feature_img, 'html.parser')
     featured_img = soup_feature_img.select_one("figure.lede a img").get("src")
     mars_data["featured_img"] = 'https://www.jpl.nasa.gov' + featured_img

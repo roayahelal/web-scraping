@@ -20,8 +20,9 @@ def index():
 @app.route("/scrape")
 def scraper():
     mars_data = mongo.db.mars_data
-    mars_data = scrape_mars.scrape()
-    mars_data.update({}, mars_data, upsert=True)
+    mars_results = scrape_mars.scrape()
+    print(mars_results)
+    mars_data.update({}, mars_results, upsert=True)
     return redirect("/", code=302)
 
 # below runs the code if this is the file that was run rather than it was imported
