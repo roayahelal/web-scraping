@@ -6,7 +6,6 @@
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
-  <!-- <p>{{ listings.news_title }}</p> change the new_titlr to other items you want to access in listings --> 
 </head>
 <body>
 </br>
@@ -19,12 +18,45 @@
       <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
     </div>
   </div>
+  </div>
   <div class ="container">
     <div class ="row">
-      <div class ="col-lg-6">
-        <h2>Most Recent News</h2>
-        {{ mars_data.news_title }}
+      <div class ="col-lg-8">
+      </br>
+    </br>
+      </body>
+      </body>
+        <h2>Most Recent News From NASA's website:</h2>
+        <h1><p>{{ listings.news_title }}</p></h1>
+      </br>
+    </br>
+        <h2>Latest Weather Tweet:</h2>
+            <h1><p>{{ listings.weather_tweet }}</p></h1>
+  </br>
+</br>
+            <h2>Mars Facts</h2>
+            <div>{{ listings.facts_table }}</div>
+        
+      </div>
+      <div class ="col-lg-4">
+      <h2>Featured Image:</h2>
+        <h1><p><img src = {{ listings.featured_img }}></p></img></p></h1>
+       
       </div>
     </div>
-  </div>
-  ></div>
+    <div class ="row">
+        <div class ="col-lg-12">
+            <h1>Hemisphere Images</h1>
+            <h1>{{ listings.hemisphere[0]["title"] }}</h1>
+            <img src= {{ listings.hemisphere[0]["img-url"] }} ></img>
+            <h1>{{ listings.hemisphere[1]["title"] }}</h1>
+            <img src= {{ listings.hemisphere[1]["img-url"] }} ></img>
+            <h1>{{ listings.hemisphere[2]["title"] }}</h1>
+            <img src= {{ listings.hemisphere[2]["img-url"] }} ></img>
+            <h1>{{ listings.hemisphere[3]["title"] }}</h1>
+            <img src= {{ listings.hemisphere[3]["img-url"] }} ></img>
+            
+          </div>
+        </div>
+
+
